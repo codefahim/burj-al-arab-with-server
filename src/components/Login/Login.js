@@ -25,7 +25,7 @@ const Login = () => {
         const signedInUser = { name: displayName, email };
         setLoggedInUser(signedInUser);
         userToken();
-        history.replace(from);
+
         // ...
       })
       .catch(function (error) {
@@ -42,6 +42,7 @@ const Login = () => {
         // Send token to your backend via HTTPS
         // ...
         sessionStorage.setItem("token", idToken);
+        history.replace(from);
       })
       .catch(function (error) {});
   };
